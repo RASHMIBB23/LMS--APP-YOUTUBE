@@ -32,9 +32,9 @@ const Login = () => {
       setLoginInput({ ...loginInput, [name]: value });
     }
   };
+
   const handleRegistration = (type) => {
     const inputData = type === "signup" ? signupInput : loginInput;
-
     console.log(inputData);
   };
 
@@ -64,7 +64,7 @@ const Login = () => {
                     value={signupInput.name}
                     onChange={(e) => changeInputHandler(e, "signup")}
                     placeholder="Eg. patel"
-                    required="true"
+                    required
                   />
                 </div>
                 <div className="grid gap-3">
@@ -75,7 +75,7 @@ const Login = () => {
                     value={signupInput.email}
                     onChange={(e) => changeInputHandler(e, "signup")}
                     placeholder="Eg. patel@gmail.com"
-                    required="true"
+                    required
                   />
                 </div>
                 <div className="grid gap-3">
@@ -83,7 +83,7 @@ const Login = () => {
                   <Input
                     type="password"
                     name="password"
-                    value={loginInput.password}
+                    value={signupInput.password}
                     onChange={(e) => changeInputHandler(e, "signup")}
                     placeholder="xyz"
                     required="true"
